@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "AccessiMorph",
+  "name": "Open Tweak",
   "version": "0.1.0",
   "description": "Auto-detects accessibility issues and applies client-side fixes + personal visual profiles.",
 

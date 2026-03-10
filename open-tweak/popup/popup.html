@@ -3,40 +3,89 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AccessiMorph</title>
+  <title>Open Tweak</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="popup.css" />
 </head>
 <body>
+
   <header>
-    <div class="logo">
-      <span class="logo-icon">♿</span>
-      <span class="logo-text">AccessiMorph</span>
+    <div class="brand">
+      <div class="brand-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-6h2v2h-2zm0-8h2v6h-2z" fill="currentColor"/>
+        </svg>
+      </div>
+      <span class="brand-name">Open Tweak</span>
     </div>
-    <div class="badge" id="fix-badge">—</div>
+    <div class="status-pill" id="status-pill">
+      <span class="status-dot"></span>
+      <span id="status-text">Active</span>
+    </div>
   </header>
 
-  <section class="fix-summary" id="fix-summary">
-    <p id="fix-message">Scanning...</p>
-    <ul id="fix-list"></ul>
-  </section>
-
-  <section class="profiles">
-    <h2>Visual Profile</h2>
-    <div class="profile-grid" id="profile-grid">
-      <button class="profile-btn" data-profile="none">None</button>
-      <button class="profile-btn" data-profile="color-blind-deuteranopia">Color Blind</button>
-      <button class="profile-btn" data-profile="low-vision">Low Vision</button>
-      <button class="profile-btn" data-profile="dyslexia">Dyslexia</button>
-      <button class="profile-btn" data-profile="deaf">Deaf / HoH</button>
-      <button class="profile-btn" data-profile="focus-mode">Focus Mode</button>
+  <div class="score-card">
+    <div class="score-left">
+      <div class="score-number" id="fix-count">—</div>
+      <div class="score-label">issues fixed</div>
     </div>
-  </section>
+    <div class="score-right">
+      <div class="wcag-badge">WCAG 2.1 AA</div>
+      <div class="site-name" id="site-name">scanning...</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <span class="section-title">What was fixed</span>
+      <span class="section-count" id="breakdown-count"></span>
+    </div>
+    <ul class="fix-list" id="fix-list">
+      <li class="fix-item skeleton"></li>
+      <li class="fix-item skeleton"></li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <span class="section-title">Visual profile</span>
+    </div>
+    <div class="profile-grid" id="profile-grid">
+      <button class="profile-btn" data-profile="none">
+        <span class="profile-icon">○</span>
+        <span>None</span>
+      </button>
+      <button class="profile-btn" data-profile="color-blind-deuteranopia">
+        <span class="profile-icon">◑</span>
+        <span>Color Blind</span>
+      </button>
+      <button class="profile-btn" data-profile="low-vision">
+        <span class="profile-icon">⊕</span>
+        <span>Low Vision</span>
+      </button>
+      <button class="profile-btn" data-profile="dyslexia">
+        <span class="profile-icon">Aa</span>
+        <span>Dyslexia</span>
+      </button>
+      <button class="profile-btn" data-profile="deaf">
+        <span class="profile-icon">◎</span>
+        <span>Deaf / HoH</span>
+      </button>
+      <button class="profile-btn" data-profile="focus-mode">
+        <span class="profile-icon">◈</span>
+        <span>Focus</span>
+      </button>
+    </div>
+  </div>
 
   <footer>
-    <label class="toggle-row" id="disable-toggle-label">
-      <span>Disabled on this site</span>
-      <input type="checkbox" id="disable-toggle" />
-      <span class="toggle-slider"></span>
+    <label class="disable-row">
+      <span class="disable-title">Pause on this site</span>
+      <div class="toggle-wrap">
+        <input type="checkbox" id="disable-toggle" />
+        <span class="toggle"></span>
+      </div>
     </label>
   </footer>
 

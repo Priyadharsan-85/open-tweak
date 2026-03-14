@@ -1,0 +1,113 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+:root {
+  --bg-primary: #0a0a0b;
+  --bg-secondary: #111113;
+  --bg-card: #18181b;
+  --bg-card-hover: #1e1e23;
+  --border: #2a2a2e;
+  --text-primary: #f4f4f5;
+  --text-secondary: #a1a1aa;
+  --text-muted: #71717a;
+  --accent: #6366f1;
+  --accent-hover: #4f46e5;
+  --critical: #ef4444;
+  --serious: #f97316;
+  --moderate: #eab308;
+  --minor: #22c55e;
+  --success: #10b981;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+/* ── Scrollbar styling ─────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* ── Code block styling ────────────────────────────────────────────────── */
+pre {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+code {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* ── Selection ─────────────────────────────────────────────────────────── */
+::selection {
+  background-color: rgba(99, 102, 241, 0.3);
+  color: var(--text-primary);
+}
+
+/* ── Focus styles ──────────────────────────────────────────────────────── */
+*:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ── Gradient text helper ──────────────────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Glassmorphism card ────────────────────────────────────────────────── */
+.glass-card {
+  background: rgba(24, 24, 27, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+/* ── Glow effect ───────────────────────────────────────────────────────── */
+.glow-accent {
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.15),
+              0 0 60px rgba(99, 102, 241, 0.05);
+}
+
+/* ── Stagger animation delays ──────────────────────────────────────────── */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
